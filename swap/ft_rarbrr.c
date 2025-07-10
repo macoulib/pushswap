@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:42:57 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 16:31:44 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 22:53:34 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,17 @@ void	ft_ra(int *nb, int ac)
 	int	tmp;
 	int	i;
 
-	if (ac > 1)
+	if (ac - 1 > 1)
 	{
 		i = 0;
 		tmp = nb[0];
-		nb[ac] = tmp;
-		while (i > ac - 1)
+		
+		while (i < ac - 1)
 		{
 			nb[i] = nb[i + 1];
 			i++;
 		}
+		nb[ac - 1] = tmp;
 	}
 	ft_printf("ra\n");
 }
@@ -40,12 +41,13 @@ void	ft_rb(int *nb, int ac)
 	{
 		i = 0;
 		tmp = nb[0];
-		nb[ac] = tmp;
-		while (i > ac - 1)
+		
+		while (i < ac - 1)
 		{
 			nb[i] = nb[i + 1];
 			i++;
 		}
+		nb[ac - 1] = tmp;
 	}
 	ft_printf("rb\n");
 }

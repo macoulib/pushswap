@@ -6,14 +6,22 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/09 18:23:18 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/10 23:18:13 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
 int	main(void)
 {
-   printf("good") ;
+	int *nb = malloc(3 * sizeof(int));
+	if (!nb)
+		return (1);
+        
+	nb[0] = 3;
+	nb[1] = 2;
+	nb[2] = 1;
+
+	twothree_sort(nb, 4);
+    printf("Résultat : %d %d %d\n", nb[0], nb[1], nb[2]);
 }
