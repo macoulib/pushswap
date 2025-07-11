@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/10 23:18:13 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/11 18:23:39 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	main(void)
 	nb[1] = 2;
 	nb[2] = 1;
 
-	twothree_sort(nb, 4);
+	twothree_sort(nb, 2);
     printf("Résultat : %d %d %d\n", nb[0], nb[1], nb[2]);
 }
