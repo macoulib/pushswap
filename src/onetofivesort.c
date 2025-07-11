@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:08:54 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/11 19:49:52 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/11 22:30:35 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ void	twothree_sort(int *nb, int ac)
 		}
 	}
 }
-void fivefor_sort(int *nb , int ac)
+
+void	four_sort(int *nb, int *nb2, int ac)
 {
-	
+	if (ac  == 3)
+	{
+		ft_pb(nb, nb2,ac);
+	}
 }
