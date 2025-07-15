@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:24 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/14 18:52:56 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:21:58 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 int		*ft_conversion(int *a, char **argv, int ac);
 int		ft_atoi(const char *str);
 int		ra_themin(int *nb, int ac);
+int		max_bits(int *nb, int ac);
+int		*normaliz_tab(int *nb, int ac);
+void	radix(int *nb, int *nb2, int *size_a, int *size_b);
 #endif

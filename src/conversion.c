@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/15 12:29:15 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:28:54 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,64 @@ int	*ft_conversion(int *a, char **argv, int ac)
 	free(stockargv);
 	return (a);
 }
-int ra_themin(int *nb , int ac )
+int	ra_themin(int *nb, int ac)
 {
-	int lownbr;
-	int i;
-	
+	int	lownbr;
+	int	i;
+
 	lownbr = nb[0];
-	i = 0 ;
+	i = 0;
 	while (i < ac)
 	{
 		if (lownbr > nb[i])
 			lownbr = nb[i];
 		i++;
 	}
-	return (lownbr)	;
+	return (lownbr);
 }
 
-void normaliz_tab(int *nb , int ac)
+int	*normaliz_tab(int *nb, int ac)
 {
-	ac = 0;
-	nb = 0;
+	int	i;
+	int	j;
+	int	*newnb;
+	int	rank;
+
+	i = 0;
+	rank = 0;
+	newnb = malloc(ac * sizeof(int));
+	if (!newnb)
+		return (NULL);
+	while (i < ac)
+	{
+		j = 0;
+		rank = 0;
+		while (j < ac)
+		{
+			if (nb[i] > nb[j])
+				rank++;
+			j++;
+		}
+		newnb[i] = rank;
+		i++;
+	}
+	return (newnb);
+}
+int	max_bits(int *nb, int ac)
+{
+	int i;
+	int x;
+
+	i = 0;
+	x = 0;
+	while (i < ac)
+	{
+		if (nb[i] > x)
+			x = nb[i];
+		i++;
+	}
+	i = 0;
+	while (x >> i != 0)
+		i++;
+	return (i);
 }

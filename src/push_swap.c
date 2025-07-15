@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/14 20:45:14 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/15 16:23:25 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ int	main(int ac, char *argv[])
 		twothree_sort(a, size_a);
 	if (size_a == 4 || size_a == 5)
 		four_sort(a, b, &size_a, &size_b);
+	else
+		radix(a, b, &size_a, &size_b);
 }
