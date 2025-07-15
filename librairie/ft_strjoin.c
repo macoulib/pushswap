@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sasbss.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 20:40:20 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/14 20:37:53 by macoulib         ###   ########.fr       */
+/*   Created: 2025/04/26 22:26:09 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/12 20:10:22 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-void	ft_sa(int *nb, int ac)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	tmp;
+	size_t	s1s2len;
+	size_t	i;
+	size_t	j;
+	char	*s1s2cpy;
 
-	if (ac  > 1)
+	i = 0;
+	j = 0;
+	s1s2len = ft_strlen(s1) + ft_strlen(s2);
+	s1s2cpy = malloc((s1s2len + 1) * sizeof(char));
+	if (!s1s2cpy)
+		return (NULL);
+	while (s1[i])
 	{
-		tmp = nb[0];
-		nb[0] = nb[1];
-		nb[1] = tmp;
+		s1s2cpy[i] = s1[i];
+		i++;
 	}
-	ft_printf("sa\n");
-}
-
-void	ft_sb(int *nb, int ac)
-{
-	int	tmp;
-
-	if (ac -1 > 1)
+	while (s2[j])
 	{
-		tmp = nb[0];
-		nb[0] = nb[1];
-		nb[1] = tmp;
+		s1s2cpy[i] = s2[j];
+		i++;
+		j++;
 	}
-	ft_printf("sb\n");
-}
-
-void	ft_ss(int *nb, int *nb2, int ac)
-{
-	if (ac - 1 > 1)
-	{
-		ft_sa(nb, ac);
-		ft_sa(nb2, ac);
-	}
-	ft_printf("ss\n");
+	s1s2cpy[i] = '\0';
+	return (s1s2cpy);
 }

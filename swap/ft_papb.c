@@ -6,40 +6,56 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:42:52 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/11 23:41:28 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/14 20:18:37 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-void	ft_pb(int *a, int *b, int ac)
+void	ft_pa(int *a, int *b, int *size_a, int *size_b)
 {
 	int	i;
-	int	j;
 
+	i = *size_a;
+	if (*size_a == 0)
+		return ;
+	while (i > 0)
+	{
+		a[i] = a[i - 1];
+		i--;
+	}
+	a[0] = b[0];
+	(*size_a)++;
 	i = 0;
-	j = 0;
-	while (b[i])
+	while (i < *size_a - 1)
+	{
+		b[i] = b[i + 1];
 		i++;
-	if (i)
-	{
-		while (j < i)
-		{
-			b[j + 1] = b[j];
-			j++;
-		}
-		j = 0;
-		while (j < ac - i)
-		{
-			printf("ac - i %d \n", ac - i );
-			a[j] = a[j + 1];
-			j++;
-		}
-		b[0] = a[0];
 	}
-	else
+	(*size_b)--;
+	ft_printf("pa\n");
+}
+
+void	ft_pb(int *a, int *b, int *size_a, int *size_b)
+{
+	int	i;
+
+	i = *size_b;
+	if (*size_a == 0)
+		return ;
+	while (i > 0)
 	{
-		b[0] = a[0];
+		b[i] = b[i - 1];
+		i--;
 	}
+	b[0] = a[0];
+	(*size_b)++;
+	i = 0;
+	while (i < *size_a - 1)
+	{
+		a[i] = a[i + 1];
+		i++;
+	}
+	(*size_a)--;
 	ft_printf("pb\n");
 }

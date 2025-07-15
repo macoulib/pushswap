@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:08:54 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/11 22:30:35 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/14 20:59:05 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	twothree_sort(int *nb, int ac)
 {
-	if (ac == 1)
+	if (ac == 2)
 	{
 		if (nb[0] > nb[1])
 			ft_sa(nb, ac);
 	}
-	if (ac == 2)
+	else if (ac == 3)
 	{
 		if (nb[1] > nb[2] && nb[2] > nb[0])
 		{
@@ -40,10 +40,31 @@ void	twothree_sort(int *nb, int ac)
 	}
 }
 
-void	four_sort(int *nb, int *nb2, int ac)
+void	four_sort(int *nb, int *nb2, int *asize, int *bsize)
 {
-	if (ac  == 3)
+	int	min_oftab;
+
+	if (*asize == 4)
 	{
-		ft_pb(nb, nb2,ac);
+		min_oftab = ra_themin(nb, *asize);
+		while (nb[0] > min_oftab)
+			ft_ra(nb, *asize);
+		ft_pb(nb, nb2, asize, bsize);
+		twothree_sort(nb, *asize);
+		ft_pa(nb, nb2, asize, bsize);
+	}
+	else if (*asize == 5)
+	{
+		min_oftab = ra_themin(nb, *asize);
+		while (nb[0] > min_oftab)
+			ft_ra(nb, *asize);
+		ft_pb(nb, nb2, asize, bsize);
+		min_oftab = ra_themin(nb, *asize);
+		while (nb[0] != min_oftab)
+			ft_ra(nb, *asize);
+		ft_pb(nb, nb2, asize, bsize);
+		twothree_sort(nb, *asize);
+		ft_pa(nb, nb2, asize, bsize);
+		ft_pa(nb, nb2, asize, bsize);
 	}
 }

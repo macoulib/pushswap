@@ -6,7 +6,7 @@
 #    By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/08 19:35:06 by macoulib          #+#    #+#              #
-#    Updated: 2025/07/10 16:27:31 by macoulib         ###   ########.fr        #
+#    Updated: 2025/07/12 20:44:54 by macoulib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ PRINT_DIR = ./ftprint
 PRINT = ft_printf.c ft_putchar.c ft_puthexamaj.c ft_puthexamin.c ft_putnbr.c ft_putpointer.c ft_putstr.c  ft_putunbr.c ft_strlen.c 
 
 # Fichiers sources utils
-SRC= onetofivesort.c fivetocentsort.c push_swap.c 
+SRC= onetofivesort.c fivetocentsort.c push_swap.c  conversion.c
 
 # Fichiers sources librairie
-LIB = ft_memcpy.c
+LIB = ft_memcpy.c ft_strdup.c ft_strjoin.c ft_split.c ft_atoi.c
 
 # Fichiers sources swap
 SWAP = ft_papb.c ft_rarbrr.c ft_rrarrbrrr.c  ft_sasbss.c

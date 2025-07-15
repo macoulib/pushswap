@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:42:57 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/11 18:21:29 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/14 19:58:55 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	ft_ra(int *nb, int ac)
 	{
 		i = 0;
 		tmp = nb[0];
-		while (i < ac)
+		while (i < ac - 1)
 		{
 			nb[i] = nb[i + 1];
 			i++;
 		}
-		nb[ac] = tmp;
+		nb[i] = tmp;
 	}
 	ft_printf("ra\n");
 }

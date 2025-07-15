@@ -1,49 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sasbss.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 20:40:20 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/14 20:37:53 by macoulib         ###   ########.fr       */
+/*   Created: 2025/04/26 00:52:36 by macoulib          #+#    #+#             */
+/*   Updated: 2025/07/12 20:11:10 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../src/push_swap.h"
 
-void	ft_sa(int *nb, int ac)
+char	*ft_strdup(const char *src)
 {
-	int	tmp;
+	size_t	i;
+	size_t	srclen;
+	char	*srcpy;
 
-	if (ac  > 1)
+	i = 0;
+	srclen = ft_strlen(src);
+	srcpy = malloc((srclen + 1) * sizeof(char));
+	if (!srcpy)
+		return (NULL);
+	while (i < srclen)
 	{
-		tmp = nb[0];
-		nb[0] = nb[1];
-		nb[1] = tmp;
+		srcpy[i] = src[i];
+		i++;
 	}
-	ft_printf("sa\n");
-}
-
-void	ft_sb(int *nb, int ac)
-{
-	int	tmp;
-
-	if (ac -1 > 1)
-	{
-		tmp = nb[0];
-		nb[0] = nb[1];
-		nb[1] = tmp;
-	}
-	ft_printf("sb\n");
-}
-
-void	ft_ss(int *nb, int *nb2, int ac)
-{
-	if (ac - 1 > 1)
-	{
-		ft_sa(nb, ac);
-		ft_sa(nb2, ac);
-	}
-	ft_printf("ss\n");
+	srcpy[i] = '\0';
+	return (srcpy);
 }
