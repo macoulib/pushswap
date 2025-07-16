@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:42:52 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/16 16:48:37 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/16 22:57:11 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ void	ft_pa(int *a, int *b, int *size_a, int *size_b)
 		i--;
 	}
 	a[0] = b[0];
-	(*size_a)++;
 	i = 0;
 	while (i < *size_a - 1)
 	{
 		b[i] = b[i + 1];
 		i++;
 	}
+	(*size_a)++;
 	(*size_b)--;
 	ft_printf("pa\n");
 }
@@ -49,13 +49,13 @@ void	ft_pb(int *a, int *b, int *size_a, int *size_b)
 		i--;
 	}
 	b[0] = a[0];
-	(*size_b)++;
 	i = 0;
-	while (i < *size_a - 1)
+	while (i < *size_a  - 1 )
 	{
 		a[i] = a[i + 1];
 		i++;
 	}
+	(*size_b)++;
 	(*size_a)--;
 	ft_printf("pb\n");
 }

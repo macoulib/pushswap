@@ -6,13 +6,13 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/16 20:51:28 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/16 23:01:34 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int	*ft_conversion(int *a, char **argv, int ac)
+void	ft_conversion(int *a, char **argv, int ac)
 {
 	char	**stockargv;
 	char	*jointargv;
@@ -40,7 +40,6 @@ int	*ft_conversion(int *a, char **argv, int ac)
 		i++;
 	}
 	free(stockargv);
-	return (a);
 }
 int	ra_themin(int *nb, int ac)
 {
@@ -69,7 +68,7 @@ void	normaliz_tab(int *nb, int ac)
 	rank = 0;
 	newnb = malloc(ac * sizeof(int));
 	if (!newnb)
-		return;
+		return ;
 	while (++i < ac)
 	{
 		j = -1;
