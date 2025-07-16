@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:09:50 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/15 16:38:02 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/16 17:53:03 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,24 @@
 
 void	radix(int *nb, int *nb2, int *size_a, int *size_b)
 {
-	int *nbcpy;
-	int bits;
-	int i;
-	int j;
-	int k;
+	int	bits;
+	int	i;
+	int	size_acpy;
 
 	i = 0;
-	j = 0;
-	k = *size_a;
-	printf("%d k  ,", k);
+	nb = normaliz_tab(nb, *size_a);
 	bits = max_bits(nb, *size_a);
-	nbcpy = normaliz_tab(nb, *size_a);
 	while (i < bits)
 	{
-		j = 0;
-		while (j < k)
+		size_acpy = *size_a;
+		while (size_acpy--)
 		{
-			if ((nbcpy[0] >> i) == 0)
+			if ((nb[0] >> i & 1) == 0)
 				ft_pb(nb, nb2, size_a, size_b);
 			else
 				ft_ra(nb, *size_a);
-			j++;
 		}
-		while (size_b > 0)
+		while (*size_b > 0)
 			ft_pa(nb, nb2, size_a, size_b);
 		i++;
 	}
