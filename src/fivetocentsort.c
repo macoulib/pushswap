@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:09:50 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/16 17:53:03 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/16 20:53:57 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	radix(int *nb, int *nb2, int *size_a, int *size_b)
 	int	size_acpy;
 
 	i = 0;
-	nb = normaliz_tab(nb, *size_a);
+	normaliz_tab(nb, *size_a);
 	bits = max_bits(nb, *size_a);
 	while (i < bits)
 	{
