@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/16 23:01:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/17 18:25:11 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	max_bits(int *nb, int ac)
 		i++;
 	}
 	i = 0;
-	while (x >> i != 0)
+	while ((x >> i) != 0)
 		i++;
 	return (i);
 }
