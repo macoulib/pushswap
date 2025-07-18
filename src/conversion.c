@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/17 18:25:11 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 16:30:26 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_conversion(int *a, char **argv, int ac)
 	}
 	free(stockargv);
 }
+
 int	ra_themin(int *nb, int ac)
 {
 	int	lownbr;
@@ -57,7 +58,7 @@ int	ra_themin(int *nb, int ac)
 	return (lownbr);
 }
 
-void	normaliz_tab(int *nb, int ac)
+int	*normaliz_tab(int *nb, int ac)
 {
 	int	i;
 	int	j;
@@ -66,9 +67,9 @@ void	normaliz_tab(int *nb, int ac)
 
 	i = -1;
 	rank = 0;
-	newnb = malloc(ac * sizeof(int));
+	newnb = malloc(ac * sizeof(int)); // malloc autorisé?
 	if (!newnb)
-		return ;
+		return (0);
 	while (++i < ac)
 	{
 		j = -1;
@@ -80,11 +81,9 @@ void	normaliz_tab(int *nb, int ac)
 		}
 		newnb[i] = rank;
 	}
-	i = -1;
-	while (++i < ac)
-		nb[i] = newnb[i];
-	free(newnb);
+	return (newnb);
 }
+
 int	max_bits(int *nb, int ac)
 {
 	int i;
@@ -99,7 +98,7 @@ int	max_bits(int *nb, int ac)
 		i++;
 	}
 	i = 0;
-	while ((x >> i) != 0)
+	while (x >> i != 0)
 		i++;
 	return (i);
 }
