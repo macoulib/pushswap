@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:43:02 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 16:01:01 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:31:53 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_rra(int *nb, int ac)
 	int	tmp;
 	int	i;
 
-	if (ac - 1 > 1)
+	if (ac  > 1)
 	{
 		tmp = nb[ac - 1];
 		i = ac - 1;

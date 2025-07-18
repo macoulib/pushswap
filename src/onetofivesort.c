@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:08:54 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/17 17:25:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:44:25 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	twothree_sort(int *nb, int ac)
 			ft_rra(nb, ac);
 		else if (nb[0] > nb[1] && nb[1] < nb[2])
 			ft_ra(nb, ac);
+		else if (nb[0] > nb[1] && nb[0] < nb[2])
+			ft_rra(nb, ac);
 		else if (nb[0] > nb[1] && nb[1] > nb[2])
 		{
 			ft_sa(nb, ac);

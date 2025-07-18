@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 16:31:03 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:47:43 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	main(int ac, char *argv[])
 	if (!a || !b)
 		return (1);
 	ft_conversion(a, argv, ac);
-	
 	if (size_a == 2 || size_a == 3)
 		twothree_sort(a, size_a);
 	else if (size_a == 4 || size_a == 5)

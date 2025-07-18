@@ -6,11 +6,12 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:42:57 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 16:31:43 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 17:38:22 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
+
 void	ft_ra(int *nb, int ac)
 {
 	int	tmp;
@@ -30,9 +31,6 @@ void	ft_ra(int *nb, int ac)
 	ft_printf("ra\n");
 }
 
-
-
-
 void	ft_rb(int *nb, int ac)
 {
 	int	tmp;
@@ -49,7 +47,7 @@ void	ft_rb(int *nb, int ac)
 		}
 		nb[ac] = tmp;
 	}
-	ft_printf("rb \n");
+	ft_printf("rb\n");
 }
 
 void	ft_rr(int *nb, int ac)

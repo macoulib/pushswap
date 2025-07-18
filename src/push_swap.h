@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:24 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 16:29:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/18 18:42:29 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ int		ra_themin(int *nb, int ac);
 int		max_bits(int *nb, int ac);
 int	*normaliz_tab(int *nb, int ac);
 void	radix(int *nb, int *nb2, int *size_a, int *size_b);
+void	sort_three(int *nb);
 #endif
