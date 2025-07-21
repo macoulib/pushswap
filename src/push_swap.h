@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:24 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 18:42:29 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 17:46:09 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,14 @@ void	ft_pa(int *a, int *b, int *size_a, int *size_b);
 char	**ft_split(const char *s, char c);
 char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
-void	ft_conversion(int *a, char **argv, int ac);
+char	**ft_conversion(char **argv, int *ac);
 int		ft_atoi(const char *str);
 int		ra_themin(int *nb, int ac);
 int		max_bits(int *nb, int ac);
-int	*normaliz_tab(int *nb, int ac);
+int		*normaliz_tab(int *nb, int ac);
 void	radix(int *nb, int *nb2, int *size_a, int *size_b);
-void	sort_three(int *nb);
+int		ft_isdigit(int c);
+
+void	ft_error(char *message);
+
 #endif

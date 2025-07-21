@@ -6,22 +6,24 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 17:56:52 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 22:00:34 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void	ft_conversion(int *a, char **argv, int ac)
+char	**ft_conversion(char **argv, int *ac)
 {
 	char	**stockargv;
 	char	*jointargv;
 	char	*tmp;
 	int		i;
+	int		x;
 
 	i = 1;
+	x = *ac;
 	jointargv = ft_strdup(" ");
-	while (i < ac)
+	while (i < x)
 	{
 		tmp = ft_strjoin(jointargv, argv[i]);
 		free(jointargv);
@@ -35,11 +37,9 @@ void	ft_conversion(int *a, char **argv, int ac)
 	free(jointargv);
 	i = 0;
 	while (stockargv[i])
-	{
-		a[i] = ft_atoi(stockargv[i]);
 		i++;
-	}
-	free(stockargv);
+	*ac = i;
+	return (stockargv);
 }
 
 int	ra_themin(int *nb, int ac)
