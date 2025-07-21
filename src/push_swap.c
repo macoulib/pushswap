@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 22:17:24 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/21 22:27:04 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	main(int ac, char *argv[])
 	if (ac < 2)
 		return (0);
 	argvchar = ft_conversion(argv, &ac);
+	if (ac == 2)
+		return (ft_atoi(argvchar[0]));
 	size_a = ac;
 	size_b = 0;
 	a = malloc(size_a * sizeof(int));
