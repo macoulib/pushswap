@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:40:20 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 17:39:39 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:29:11 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sa(int *nb, int ac)
 {
 	int	tmp;
 
-	if (ac  > 1)
+	if (ac > 1)
 	{
 		tmp = nb[0];
 		nb[0] = nb[1];
@@ -29,7 +29,7 @@ void	ft_sb(int *nb, int ac)
 {
 	int	tmp;
 
-	if (ac -1 > 1)
+	if (ac - 1 > 1)
 	{
 		tmp = nb[0];
 		nb[0] = nb[1];

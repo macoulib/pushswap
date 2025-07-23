@@ -6,19 +6,22 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:08:54 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 18:44:25 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:27:03 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+void	twonb(int *nb, int ac)
+{
+	if (nb[0] > nb[1])
+		ft_sa(nb, ac);
+}
+
 void	twothree_sort(int *nb, int ac)
 {
 	if (ac == 2)
-	{
-		if (nb[0] > nb[1])
-			ft_sa(nb, ac);
-	}
+		twonb(nb, ac);
 	else if (ac == 3)
 	{
 		if (nb[1] > nb[2] && nb[2] > nb[0])

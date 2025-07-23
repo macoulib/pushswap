@@ -6,15 +6,15 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 19:10:12 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 17:42:06 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/22 20:43:06 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-int	ft_isdigit( int c )
+int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
 		return (1);
 	return (0);
 }

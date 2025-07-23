@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 22:27:04 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:20:38 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,55 +17,82 @@ void	ft_free(int *a, int *b)
 	free(a);
 	free(b);
 }
-void	check_doublons(char **s, int ac)
+
+void	check_doublons(int ac, char **argv, int *a, int *b)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	while (i < ac)
+	i = -1;
+	while (++i < ac)
 	{
 		j = i + 1;
 		while (j < ac)
 		{
-			if (ft_atoi(s[i]) == ft_atoi(s[j]))
-				ft_error("doublons detecte");
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			{
+				j = 0;
+				while (argv[j])
+				{
+					free(argv[j]);
+					j++;
+				}
+				free(argv);
+				ft_free(a, b);
+				write(1, "Error\n", 6);
+				exit(0);
+			}
 			j++;
 		}
-		i++;
 	}
 }
 
-void	check_fakedigit(char *arv, char **argv)
+void	check_fakedigit(char *arv, char **argv, int *a, int *b)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (arv[i])
 	{
 		if (!ft_isdigit(arv[i]))
 		{
-			write(1, "Error\n", 6);
-			free(argv[i]);
+			j = 0;
+			while (argv[j])
+			{
+				free(argv[j]);
+				j++;
+			}
 			free(argv);
-			break ;
+			ft_free(a, b);
+			write(1, "Error\n", 6);
+			exit(0);
 		}
 		i++;
 	}
 }
-void	chartoint(int *nb, char **argv, int ac)
+
+void	char_to_int(char **argv, int ac, int *a, int *b)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	if (argv)
 	{
 		while (argv[i])
 		{
-			check_fakedigit(argv[i], argv);
-			check_doublons(argv, ac);
-			nb[i] = ft_atoi(argv[i]);
+			check_fakedigit(argv[i], argv, a, b);
+			check_doublons(ac, argv, a, b);
+			check_max_min(ft_atoi(argv[i]), argv, a, b);
+			a[i] = ft_atoi(argv[i]);
 			i++;
+		}
+		while (argv[j])
+		{
+			free(argv[j]);
+			j++;
 		}
 		free(argv);
 	}
@@ -82,20 +109,18 @@ int	main(int ac, char *argv[])
 	if (ac < 2)
 		return (0);
 	argvchar = ft_conversion(argv, &ac);
-	if (ac == 2)
-		return (ft_atoi(argvchar[0]));
+	if (!argvchar[0] || !argvchar)
+		write(1, "Error\n", 6);
+	if (ac == 1)
+		return (acone(argvchar));
 	size_a = ac;
 	size_b = 0;
 	a = malloc(size_a * sizeof(int));
 	b = malloc(size_a * sizeof(int));
 	if (!a || !b)
 		return (1);
-	chartoint(a, argvchar, size_a);
-	if (size_a == 2 || size_a == 3)
-		twothree_sort(a, size_a);
-	else if (size_a == 4 || size_a == 5)
-		four_sort(a, b, &size_a, &size_b);
-	else if (size_a > 5)
-		radix(a, b, &size_a, &size_b);
+	char_to_int(argvchar, size_a, a, b);
+	if (!check_order(a, size_a))
+		push_function(size_a, size_b, a, b);
 	ft_free(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:09:50 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/18 18:59:51 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/22 18:30:36 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	radix(int *nb, int *nb2, int *size_a, int *size_b)
 			ft_pa(nb, nb2, size_a, size_b);
 		i++;
 	}
+	free(nb);
 }

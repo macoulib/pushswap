@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 16:01:24 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 17:46:09 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:41:15 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,11 @@ int		max_bits(int *nb, int ac);
 int		*normaliz_tab(int *nb, int ac);
 void	radix(int *nb, int *nb2, int *size_a, int *size_b);
 int		ft_isdigit(int c);
-
 void	ft_error(char *message);
+void	check_max_min(int argv, char **argv2, int *a, int *b);
+void	ft_free(int *a, int *b);
+int		check_order(int *nb, int sa);
+int		acone(char **argvchar);
+void	push_function(int size_a, int size_b, int *a, int *b);
 
 #endif

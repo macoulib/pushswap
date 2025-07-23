@@ -6,22 +6,21 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 16:08:21 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/12 20:44:27 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:54:38 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
-
 
 int	espaces(const char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r'
+		|| str[i] == '\v' || str[i] == '\f')
 	{
-	i++;
+		i++;
 	}
 	return (i);
 }
@@ -42,13 +41,13 @@ int	ispositif(const char *str, int i)
 	return (sign);
 }
 
-int	maxmin(int result, int sign)
+long	maxmin(int result, int sign)
 {
-	int	int_max;
-	int	int_min;
+	long	int_max;
+	long	int_min;
 
-	int_max = 2147483647;
-	int_min = -2147483648;
+	int_max = 2147483646;
+	int_min = -2147483647;
 	if (result * sign > int_max)
 	{
 		return (int_max);
@@ -77,8 +76,8 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
-		maxmin (result, sign);
 		i++;
 	}
+	maxmin(result, sign);
 	return (result * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: macoulib <macoulib@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:51:25 by macoulib          #+#    #+#             */
-/*   Updated: 2025/07/21 22:00:34 by macoulib         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:06:06 by macoulib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,11 @@ char	**ft_conversion(char **argv, int *ac)
 		i++;
 	}
 	stockargv = ft_split(jointargv, ' ');
-	free(jointargv);
 	i = 0;
 	while (stockargv[i])
 		i++;
 	*ac = i;
-	return (stockargv);
+	return (free(jointargv), stockargv);
 }
 
 int	ra_themin(int *nb, int ac)
@@ -67,7 +66,7 @@ int	*normaliz_tab(int *nb, int ac)
 
 	i = -1;
 	rank = 0;
-	newnb = malloc(ac * sizeof(int)); // malloc autorisé?
+	newnb = malloc(ac * sizeof(int));
 	if (!newnb)
 		return (0);
 	while (++i < ac)
@@ -86,8 +85,8 @@ int	*normaliz_tab(int *nb, int ac)
 
 int	max_bits(int *nb, int ac)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	x = 0;
